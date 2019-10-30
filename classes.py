@@ -1,19 +1,28 @@
 class Cliente(object):
+    
+
     def __init__(self, nome, CPF, saldo, senha):
         self.nome = nome
         self.CPF = CPF
         self.saldo = saldo
         self.senha = senha
 
-    def buscaCliente(self, cpf):
+    def buscaCPF(self, cpf, true=None, false=None):
         if self.CPF == cpf:
-            return self
-        else: return "Cliente sem cadastro"
+            return self.CPF==cpf
+        else: return self.CPF!=cpf
 
     def confereSenha(self, senha):
         if self.senha == senha:
+            return self.senha==senha
+        else: return self.senha!=senha
+
+    def retornaCliente(self, cpf):
+        if self.CPF == cpf:
             return self
-        else: return "Senha incorreta"
+
+    def retornaNome(self):
+        return self.nome
 
 class Produto(object):
     def __init__(self, nome, codigo, valor, quantidadeEmEstoque):
