@@ -5,6 +5,7 @@
 import serial
 from classes import Cliente, Produto, Venda
 
+
 def leituraRFID():
     serial_port = '/dev/ttyUSB0'
     port_speed = 9600
@@ -13,25 +14,6 @@ def leituraRFID():
     tag_list = ser.readlines(max_bytes)
     tag_list = set(tag_list)
     print(tag_list)
-
-def autenticacao(Cliente):
-    id = input('insira seu CPF:')
-    resp1 = c.buscaCPF(id)
-
-    if(resp1):
-        cliente = c.retornaCliente()
-        nomeCliente = cliente.retornaNome()
-    else:
-        print("Cliente não cadastrado")
-
-    senha = input('insira sua senha:')
-    resp2 = cliente.confereSenha(senha)
-    if (resp2):
-        print("Autenticação efetuada, bem vind@ ", nomeCliente)
-    else:
-        print("Falha na autenticação")
-
-
 
 
 if __name__ == '__main__':
@@ -46,11 +28,9 @@ if __name__ == '__main__':
     # leitura dos produtos
     print("passe os produtos")
    # leituraRFID()
-    
+
     # autenticação
     print("autenticação")
-    autenticacao(c)
 
     # finalizando a venda
     print("finalizando a venda")
-
