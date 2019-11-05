@@ -8,6 +8,7 @@ from classes import Cliente, Produto, Venda
 from firebase import firebase
 from firebase.firebase import FirebaseAuthentication, FirebaseApplication
 
+
 def leituraRFID():
     serial_port = '/dev/ttyUSB0'
     port_speed = 9600
@@ -17,6 +18,7 @@ def leituraRFID():
     tag_list = set(tag_list)
     print(tag_list)
 
+<<<<<<< HEAD
 if __name__ == '__main__':
 
 
@@ -29,18 +31,26 @@ if __name__ == '__main__':
     sarom = {"nome": "sarom", "cpf": 12378912378, "saldo": 500, "senha": "testesarom"}
 
     #snapshot = firebase.post('/clients', sarom) -- para adicionar novos clientes no bando de dados
+=======
+>>>>>>> refs/remotes/origin/master
 
     # iniciando o sistema
     print("iniciando o sistema")
    
     # leitura dos produtos
     print("passe os produtos")
+<<<<<<< HEAD
     leituraRFID()
     
     # autenticação
     print("autenticação")
     #autenticacao(c)
+=======
+   # leituraRFID()
+
+    # autenticação
+    print("autenticação")
+>>>>>>> refs/remotes/origin/master
 
     # finalizando a venda
     print("finalizando a venda")
-
