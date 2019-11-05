@@ -32,3 +32,10 @@ Comandos para instalar o firebase:
 	'pip freeze' (para ver as versões)
 	'pip freeze > requirements.txt' (adicionar versões dentro do arquivo requirements, depois instala este arquivo para adicionar as versões da biblioteca)
 	'touch teste.py' (para criar um arquivo vazio)
+
+
+	comandos do git:
+	'git branch' (para ver qual ramo está trabalhando)
+	'git branch NOME' (para criar um ramo com nome NOME)
+	'git checkout NOME' (para ir para ramo de nome NOME)
+	no final deve-se dar um merge... pesquisar comando

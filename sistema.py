@@ -2,8 +2,11 @@
 # -*- coding: utf-8 -*-
 
 #import sys
+
 import serial
 from classes import Cliente, Produto, Venda
+from firebase import firebase
+from firebase.firebase import FirebaseAuthentication, FirebaseApplication
 
 def leituraRFID():
     serial_port = '/dev/ttyUSB0'
@@ -14,42 +17,29 @@ def leituraRFID():
     tag_list = set(tag_list)
     print(tag_list)
 
-def autenticacao(Cliente):
-    id = input('insira seu CPF:')
-    resp1 = c.buscaCPF(id)
-
-    if(resp1):
-        cliente = c.retornaCliente()
-        nomeCliente = cliente.retornaNome()
-    else:
-        print("Cliente não cadastrado")
-
-    senha = input('insira sua senha:')
-    resp2 = cliente.confereSenha(senha)
-    if (resp2):
-        print("Autenticação efetuada, bem vind@ ", nomeCliente)
-    else:
-        print("Falha na autenticação")
-
-
-
-
 if __name__ == '__main__':
+
+
+   # authentication = firebase.FirebaseAuthentication(oiPMNklhLclGiEpFGzVmOv6AMsV6KOQSadfTLAap, elisa.rodrigues444@gmail.com, extra={'id': 123})
+    authentication = firebase.FirebaseAuthentication('oiPMNklhLclGiEpFGzVmOv6AMsV6KOQSadfTLAap', 'elisa.rodrigues444@gmail.com', True, True)
+    firebase = FirebaseApplication('https://pji2-ade1a.firebaseio.com', authentication)
+
+    elisa = {"nome" : "elisa", "cpf" : 12345678912, "saldo" : 500, "senha" : "testeelisa" }
+    camilla = {"nome": "camilla", "cpf" : 12345612345, "saldo" : 500, "senha" : "testecamilla" }
+    sarom = {"nome": "sarom", "cpf": 12378912378, "saldo": 500, "senha": "testesarom"}
+
+    #snapshot = firebase.post('/clients', sarom) -- para adicionar novos clientes no bando de dados
+
     # iniciando o sistema
     print("iniciando o sistema")
-    nome = input('insira o nome: ')
-    id = input('insira cpf: ')
-    saldo = 500
-    senha = "senha1234"
-    c = Cliente(nome, id, saldo, senha)
-
+   
     # leitura dos produtos
     print("passe os produtos")
-   # leituraRFID()
+    leituraRFID()
     
     # autenticação
     print("autenticação")
-    autenticacao(c)
+    #autenticacao(c)
 
     # finalizando a venda
     print("finalizando a venda")
