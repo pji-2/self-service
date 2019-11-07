@@ -3,6 +3,7 @@ from leituraRFID import leituraRFID
 from classes import Cliente, Produto, Venda
 from firebase import firebase
 from firebase.firebase import FirebaseAuthentication, FirebaseApplication
+from database import getCliente, getProduto
 
 if __name__ == '__main__':
 
@@ -33,3 +34,18 @@ if __name__ == '__main__':
     # finalizando a venda
     print("finalizando a venda")
     print('\n')
+
+    cliente = getCliente('12345678912',firebase)
+    print("Cliente: ")
+    print(cliente)
+    print ('\n')
+
+    #pegando todos produto do banco de dados 
+    produto = getProduto('2200D879C4',firebase)
+    print("Produto: ")
+    print (produto)
+    print ('\n')
+
+
+
+    listaProdutos = []
