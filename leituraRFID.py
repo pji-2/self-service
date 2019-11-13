@@ -1,5 +1,8 @@
 import serial
 
+# teste
+
+
 def leituraRFID():
     tag_list = list()
 
