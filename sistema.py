@@ -61,8 +61,11 @@ if __name__ == '__main__':
                 conf = input("Digite 1 para confirmar pagamento e 0 para cancelar\n")
                 if(conf == '1'):
                     debito = int(dicUser['saldo']) - int(valor_final[1])
-                    saldo = pagamento(user,firebase,debito)
-                    print("Seu saldo atual é R$",saldo)
+                    if(debito < 0):
+                        print("Saldo insuficiente")
+                    else:
+                        saldo = pagamento(user,firebase,debito)
+                        print("Seu saldo atual é R$",saldo)
 
                 break
         else:
