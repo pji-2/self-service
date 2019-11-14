@@ -38,21 +38,6 @@ class Application:
         self.quartoContainer["pady"] = 20
         self.quartoContainer.pack()
 
-#        self.widget2 = Frame(master)
-#        self.widget2.pack()
-
-#        self.primeiroContainer = Frame(master)
-#        self.primeiroContainer.pack()
-
-#        self.segundoContainer = Frame(master)
-#        self.segundoContainer.pack()
-
-#        self.terceiroContainer = Frame(master)
-#        self.terceiroContainer.pack()
-
-#        self.quartoContainer = Frame(master)
-#        self.quartoContainer.pack()
-
         self.iniciar = Button(self.framePrincipal)
         self.iniciar["text"] = "Iniciar"
         self.iniciar["font"] = ("Calibri", "15")
@@ -85,6 +70,7 @@ class Application:
         self.confirmar["font"] = ("Calibri", "15")
         self.confirmar["width"] = 8
         self.confirmar["command"] = self.confirmacao
+        #self.confirmar["state"] = "DISABLED"
 
         self.confirmar.grid(row=3,column=0,padx= 0, pady=0)
 
@@ -93,7 +79,7 @@ class Application:
 
         self.msg.pack_forget()
         self.sair.pack_forget()
-        #self.confirmar.pack_forget()
+        self.confirmar.pack_forget()
 
 
         self.fontePadrao = ("Arial", "15")
@@ -101,8 +87,7 @@ class Application:
         self.titulo = Label(self.primeiroContainer, text="Dados do usuário")
         self.titulo["font"] = ("Arial", "15", "bold")
         self.titulo.pack()
-  
-        print("pass")
+
         self.nomeLabel = Label(self.segundoContainer,text="Nome", font=self.fontePadrao)
         self.nomeLabel.pack(side=LEFT)
   
@@ -135,10 +120,15 @@ class Application:
 
         usuario = self.nome.get()
         senha = self.senha.get()
-        if usuario == "usuario" and senha == "senha":
-            self.mensagem["text"] = "Autenticado"
-        else:
+        user = autenticacao(usuario,senha,firebase)
+        if user['nome'] == 'null':
             self.mensagem["text"] = "Erro na autenticação"
+        else:
+            self.mensagem["text"] = "Autenticado"
+#        if usuario == "usuario" and senha == "senha":
+#            self.mensagem["text"] = "Autenticado"
+#        else:
+#            self.mensagem["text"] = "Erro na autenticação"
 
 root = Tk()
 root.title('Self-service')
@@ -146,3 +136,7 @@ root.geometry("500x500") #define a geometria
 root.resizable(0,0) #não ajusta o tamanho
 Application(root)
 root.mainloop()
+
+
+#12345612345
+#testecamilla
