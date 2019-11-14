@@ -25,7 +25,7 @@ if __name__ == '__main__':
     # leitura dos produtos
     print("passe os produtos")
 
-    # leituraRFID()
+    leituraRFID()
 
     # autenticação
     print("autenticação")
@@ -35,17 +35,15 @@ if __name__ == '__main__':
     print("finalizando a venda")
     print('\n')
 
-    cliente = getCliente('12345678912',firebase)
+    cliente = getCliente('12345678912', firebase)
     print("Cliente: ")
     print(cliente)
-    print ('\n')
+    print('\n')
 
-    #pegando todos produto do banco de dados 
-    produto = getProduto('2200D879C4',firebase)
+    # pegando todos produto do banco de dados
+    produto = getProduto('2200D879C4', firebase)
     print("Produto: ")
-    print (produto)
-    print ('\n')
-
-
+    print(produto)
+    print('\n')
 
     listaProdutos = []
