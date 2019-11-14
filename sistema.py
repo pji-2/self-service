@@ -3,7 +3,7 @@ from leituraRFID import leituraRFID
 from classes import Cliente, Produto, Venda
 from firebase import firebase
 from firebase.firebase import FirebaseAuthentication, FirebaseApplication
-from database import getCliente, getProduto
+from database import getClient, getProduct, listProduct, autenticacao
 
 if __name__ == '__main__':
 
@@ -27,25 +27,43 @@ if __name__ == '__main__':
 
     # leituraRFID()
 
-    # autenticação
-    print("autenticação")
-    # autenticacao(c)
-
     # finalizando a venda
     print("finalizando a venda")
     print('\n')
 
-    cliente = getCliente('12345678912',firebase)
-    print("Cliente: ")
-    print(cliente)
-    print ('\n')
+    #lista para teste sem módulo
+    listTag = ['2200D879C9','2200D879CA','2200D879C4','2200D879C8','2200D879C7']
 
-    #pegando todos produto do banco de dados 
-    produto = getProduto('2200D879C4',firebase)
-    print("Produto: ")
-    print (produto)
-    print ('\n')
+    valor_final = listProduct(listTag,firebase)
+
+    print("O valor final é R$",valor_final)
+    print("\n")
 
 
+    while(True):
+        opcao = input("Digite 1 para confirmar ou 0 para cancelar\n")
+        if(opcao == '1'):
+            user = input("Digite usuário:")
+            psw = input("Digite senha:")
+            dicUser = autenticacao(user,psw,firebase)
 
-    listaProdutos = []
+            if(dicUser['nome']=='null'):
+                novaTentativa=input("Usuário ou senhas incorretos!\n Digite 1 para tentar novamente ou 0 para sair:\n")
+                if(novaTentativa == '0'):
+                    break
+
+            else:
+                print("Olá",dicUser['nome'], "seu saldo é R$",dicUser['saldo'],"\n")
+                conf = input("Digite 1 para confirmar pagamento e 0 para cancelar")
+                if(conf == '1'):
+                    print("Fazer débito")
+                break
+        else:
+            print("Operação cancelada")
+
+
+
+
+
+#12345612345
+#testecamilla
