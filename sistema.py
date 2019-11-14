@@ -37,7 +37,8 @@ if __name__ == '__main__':
     valor_final = listProduct(listTag,firebase)
 
 
-    print(valor_final)
+    print(valor_final[0])
+    print("Valor total: R$",valor_final[1])
  #   print(valor_final[1])
     # print("O valor final é R$",valor_final)
     # print("\n")
@@ -59,7 +60,7 @@ if __name__ == '__main__':
                 print("Olá",dicUser['nome'], "seu saldo é R$",dicUser['saldo'],"\n")
                 conf = input("Digite 1 para confirmar pagamento e 0 para cancelar\n")
                 if(conf == '1'):
-                    debito = int(dicUser['saldo']) - int(valor_final)
+                    debito = int(dicUser['saldo']) - int(valor_final[1])
                     saldo = pagamento(user,firebase,debito)
                     print("Seu saldo atual é R$",saldo)
 
