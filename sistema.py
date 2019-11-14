@@ -3,7 +3,7 @@ from leituraRFID import leituraRFID
 from classes import Cliente, Produto, Venda
 from firebase import firebase
 from firebase.firebase import FirebaseAuthentication, FirebaseApplication
-from database import getClient, getProduct, listProduct, autenticacao
+from database import getClient, getProduct, listProduct, autenticacao, pagamento
 
 if __name__ == '__main__':
 
@@ -36,8 +36,11 @@ if __name__ == '__main__':
 
     valor_final = listProduct(listTag,firebase)
 
-    print("O valor final é R$",valor_final)
-    print("\n")
+
+    print(valor_final)
+ #   print(valor_final[1])
+    # print("O valor final é R$",valor_final)
+    # print("\n")
 
 
     while(True):
@@ -48,18 +51,21 @@ if __name__ == '__main__':
             dicUser = autenticacao(user,psw,firebase)
 
             if(dicUser['nome']=='null'):
+                # A senha errada não está funcionando
                 novaTentativa=input("Usuário ou senhas incorretos!\n Digite 1 para tentar novamente ou 0 para sair:\n")
                 if(novaTentativa == '0'):
                     break
-
             else:
                 print("Olá",dicUser['nome'], "seu saldo é R$",dicUser['saldo'],"\n")
-                conf = input("Digite 1 para confirmar pagamento e 0 para cancelar")
+                conf = input("Digite 1 para confirmar pagamento e 0 para cancelar\n")
                 if(conf == '1'):
-                    print("Fazer débito")
+                    debito = int(dicUser['saldo']) - int(valor_final)
+                    saldo = pagamento(user,firebase,debito)
+                    print("Seu saldo atual é R$",saldo)
+
                 break
         else:
-            print("Operação cancelada")
+            print("Operação cancelada\n")
 
 
 
