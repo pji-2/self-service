@@ -10,6 +10,8 @@ firebase = FirebaseApplication(
 
 listTag = ['2200D879C9','2200D879CA','2200D879C4','2200D879C8','2200D879C7']
 
+condicao = True
+
 class Application:
     def __init__(self, master=None):
         #-----------------------------
@@ -51,7 +53,6 @@ class Application:
         self.framePrincipal.pack_forget()
         
         lista = listProduct(listTag,firebase)
-
         self.msg = Label(self.widget1, text=lista[0])
         self.msg["font"] = ("Arial", "15","bold")
         #self.msg.pack ()
@@ -74,12 +75,18 @@ class Application:
 
         self.confirmar.grid(row=3,column=0,padx= 0, pady=0)
 
+        cont = 0
+        while (condicao):
+            self.msg["show"] = str(cont)
+            cont = cont + 1
+
 
     def confirmacao(self):
 
         self.msg.pack_forget()
         self.sair.pack_forget()
         self.confirmar.pack_forget()
+
 
 
         self.fontePadrao = ("Arial", "15")
