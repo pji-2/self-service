@@ -5,8 +5,10 @@
   <object class="GtkWindow" id="tela">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">self-service</property>
-    <property name="resizable">False</property>
     <property name="window_position">center</property>
+    <property name="default_width">500</property>
+    <property name="default_height">400</property>
+    <signal name="destroy" handler="quit" swapped="no"/>
     <child>
       <object class="GtkBox" id="box">
         <property name="visible">True</property>
