@@ -4,6 +4,7 @@
   <requires lib="gtk+" version="3.20"/>
   <object class="GtkWindow" id="authWin">
     <property name="can_focus">False</property>
+    <signal name="destroy" handler="quit_win" swapped="no"/>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
@@ -41,6 +42,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <signal name="clicked" handler="autenticar" swapped="no"/>
           </object>
           <packing>
             <property name="expand">False</property>
