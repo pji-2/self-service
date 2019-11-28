@@ -26,12 +26,14 @@ def autenticacao(id,senha,firebase):
     dicNulo = {'nome':'null'}
     clientDic = firebase.get('/clients',id)
     if(clientDic['senha'] == senha):
-        return clientDic
+        return True
     else:
-        return dicNulo
+        return False
 
 def pagamento(id,firebase,debito):
 
-    firebase.put('/clients/'+id,"saldo",debito)
+    c = getClient(id,firebase)
+    valor_deb = c['saldo'] - debito
+    firebase.put('/clients/'+id,"saldo",valor_deb)
     clientDic = firebase.get('/clients',id)
     return clientDic['saldo']

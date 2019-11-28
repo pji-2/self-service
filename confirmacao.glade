@@ -2,19 +2,23 @@
 <!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
-  <object class="GtkWindow" id="pagWin">
+  <object class="GtkWindow" id="confiWin">
     <property name="can_focus">False</property>
+    <property name="type">popup</property>
+    <property name="title" translatable="yes">Confirmação</property>
+    <property name="window_position">center-always</property>
+    <property name="gravity">center</property>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkLabel" id="labelPag">
+          <object class="GtkLabel" id="labelConf">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_bottom">86</property>
-            <property name="label" translatable="yes">Confirmar Pagamento?</property>
+            <property name="margin_bottom">45</property>
+            <property name="label" translatable="yes">Status</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -23,31 +27,17 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="botaoSim">
-            <property name="label" translatable="yes">Sim</property>
+          <object class="GtkButton" id="botaoOk">
+            <property name="label" translatable="yes">OK</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <signal name="clicked" handler="btSim_click" swapped="no"/>
+            <signal name="clicked" handler="btOk_click" swapped="no"/>
           </object>
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkButton" id="botaoNao">
-            <property name="label" translatable="yes">Não</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <signal name="clicked" handler="btSim_click" swapped="no"/>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">2</property>
           </packing>
         </child>
       </object>
