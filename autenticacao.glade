@@ -6,7 +6,7 @@
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Autenticação</property>
     <property name="window_position">center</property>
-    <property name="icon_name">Autenticação</property>
+    <property name="icon">key.png</property>
     <property name="gravity">center</property>
     <property name="startup_id">Autenticação</property>
     <signal name="destroy" handler="quit_win" swapped="no"/>

@@ -37,7 +37,7 @@ class Inicio:
         
   
     def quit(self,*args):
-            Gtk.main_quit()
+        Gtk.main_quit()
 
 class Tela:
     def __init__(self,arq):
@@ -120,7 +120,7 @@ class PagTela:
         self.botaoSim = self.builder.get_object('botaoSim')
         self.botaoNao = self.builder.get_object('botaoNao')
         self.labelPag = self.builder.get_object('labelPag')
-        text = self.user['nome'] + " seu saldo é de R$" + str(self.user['saldo']) + ".\n Confirmar o pagamento de R$ "+ str(self.valor_pag) +"?"
+        text = self.user['nome'] + " seu saldo é de R$" + str(self.user['saldo']) + ".\nConfirmar o pagamento de R$ "+ str(self.valor_pag) +"?"
         self.labelPag.set_text(text)
         self.builder.connect_signals({"quit_win": self.quit,"btSim_click":self.btSim_click, "btNao_click":self.btNao_click})
     

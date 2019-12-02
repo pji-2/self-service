@@ -9,7 +9,7 @@
     <property name="default_width">250</property>
     <property name="default_height">350</property>
     <property name="destroy_with_parent">True</property>
-    <property name="icon_name">Produtos</property>
+    <property name="icon">cart.png</property>
     <property name="gravity">center</property>
     <signal name="destroy" handler="quit_win" swapped="no"/>
     <child>
