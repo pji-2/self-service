@@ -20,23 +20,23 @@ a proposta inicial de um atendimento mais ágil. <br />
 Todavia, a computação é realizada em um microcontrolador e os dados de autenticação e produtos foram alocados 
 em um sistema em nuvem mantendo a proposta inicial. <br />
 
-## **Objetivos atingidos** <br />
+### **Objetivos atingidos** <br />
 Os objetivos foram parcialmente atingidos. O sistema entregue é funcional, 
 entretanto a leitura das tags não é realizada em conjunto. <br />
 
-## **Entregue no prazo** <br />
+### **Entregue no prazo** <br />
 O projeto foi entregue no dia 05/12/19 e dentro do prazo previsto. <br />
 
 ## **Projeto** <br />
 O projeto dispõe um código RFID para cada produto e estes são computados por um sistema que calcula a quantia e o valor de cada produto apresentando em tela a lista de produtos e o valor final da compra. O pagamento final é realizado através de um processo de validação do usuário, que conta com um sistema pré-pago. <br />
 
-## **Pontos fortes** <br />
+### **Pontos fortes** <br />
 - Realiza a leitura das tags em distâncias médias.
 - O sistema é descentralizado com o banco de dados implementado em nuvem.
 - Possui interface gráfica.
 - Possui backup do banco de dados em nuvem.
 
-## **Pontos fracos** <br />
+### **Pontos fracos** <br />
 - Realiza a leitura de uma tag por vez.
 - A alimentação do sistema não é portátil.
 - É necessário a reinicialização do sistema após a finalização da venda.
