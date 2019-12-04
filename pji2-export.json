@@ -1,0 +1,46 @@
+{
+  "clients" : {
+    "12345612345" : {
+      "nome" : "Camilla",
+      "saldo" : 9090,
+      "senha" : "testecamilla"
+    },
+    "12345678912" : {
+      "nome" : "Elisa",
+      "saldo" : 10000,
+      "senha" : "testeelisa"
+    },
+    "12378912378" : {
+      "nome" : "Sarom",
+      "saldo" : 10000,
+      "senha" : "testesarom"
+    }
+  },
+  "products" : {
+    "2200D879C4" : {
+      "nome" : "Sabao",
+      "quantidadeEmEstoque" : 2,
+      "valor" : 10
+    },
+    "2200D879C7" : {
+      "nome" : "Arroz",
+      "quantidadeEmEstoque" : 4,
+      "valor" : 63
+    },
+    "2200D879C8" : {
+      "nome" : "Creme",
+      "quantidadeEmEstoque" : 3,
+      "valor" : 25
+    },
+    "2200D879C9" : {
+      "nome" : "Azeite",
+      "quantidadeEmEstoque" : 1,
+      "valor" : 100
+    },
+    "2200D879CA" : {
+      "nome" : "Bolacha",
+      "quantidadeEmEstoque" : 1,
+      "valor" : 50
+    }
+  }
+}
