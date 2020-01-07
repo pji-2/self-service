@@ -7,17 +7,11 @@ from database import getClient, getProduct, listProduct, autenticacao, pagamento
 
 if __name__ == '__main__':
 
-   # authentication = firebase.FirebaseAuthentication(oiPMNklhLclGiEpFGzVmOv6AMsV6KOQSadfTLAap, elisa.rodrigues444@gmail.com, extra={'id': 123})
+   
     authentication = firebase.FirebaseAuthentication(
-        'oiPMNklhLclGiEpFGzVmOv6AMsV6KOQSadfTLAap', 'elisa.rodrigues444@gmail.com', True, True)
+        'key', 'e-mail', True, True)
     firebase = FirebaseApplication(
-        'https://pji2-ade1a.firebaseio.com', authentication)
-
-    # elisa = {"nome" : "elisa", "cpf" : 12345678912, "saldo" : 500, "senha" : "testeelisa" }
-    # camilla = {"nome": "camilla", "cpf" : 12345612345, "saldo" : 500, "senha" : "testecamilla" }
-    # sarom = {"nome": "sarom", "cpf": 12378912378, "saldo": 500, "senha": "testesarom"}
-
-    # snapshot = firebase.post('/clients', sarom) -- para adicionar novos clientes no bando de dados
+        'link', authentication)
 
     # iniciando o sistema
     print("iniciando o sistema")
